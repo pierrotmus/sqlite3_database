@@ -1,0 +1,11 @@
+/* Pierrot Musumbu 
+
+  1.	frequency(docid, term, count)
+	(b) select project: Write a SQL statement that is equivalent to the following relational algebra expression.
+
+	πterm(σdocid=10398_txt_earn and count=1(frequency))
+*/
+
+SELECT count(*) FROM( SELECT term FROM Frequency WHERE docid='10398_txt_earn' AND count=1 );
+
+/* $ sqlite3 reuters.db < part_b1.txt < part_b.txt */

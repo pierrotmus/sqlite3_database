@@ -1,0 +1,10 @@
+/* Pierrot Musumbu 
+
+  1.	frequency(docid, term, count)
+	(d) count: Write a SQL statement to count the number of unique documents containing the word "law" or containing the word "legal" 
+	(If a document contains both law and legal, it should only be counted once)
+*/
+
+SELECT count(DISTINCT docid) FROM Frequency WHERE term='law' OR term='legal';
+
+/* $ sqlite3 reuters.db < part_d1.txt < part_d.txt */

@@ -1,0 +1,19 @@
+/* Pierrot Musumbu 
+
+  2.	A(row_num, col_num, value) and B(row_num, col_num, value)
+	(g) multiply: Express A X B as a SQL query, referring to the class lecture for hints.
+        What to turn in: Save the value of cell (2,3) in a file part_g.txt and upload the file as your answer. 
+        The file should only contain the value of the cell at position (2,3).
+*/
+
+
+SELECT val
+FROM (
+     SELECT A.row_num, B.col_num, SUM(A.value*B.value) as val
+     FROM A,B
+     WHERE A.col_num = B.row_num
+     GROUP BY A.row_num, B.col_num
+)
+WHERE row_num = 2 and col_num = 3;
+
+/* $ sqlite3 matrix.db < part_g1.txt < part_g.txt */

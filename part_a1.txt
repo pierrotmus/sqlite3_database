@@ -1,0 +1,10 @@
+/* Pierrot Musumbu 
+
+  1.	frequency(docid, term, count)
+	(a) select: Write a query that is equivalent to the following relational algebra expression.
+
+	σ10398_txt_earn(frequency)
+*/
+SELECT count(*) FROM( SELECT * FROM Frequency WHERE docid='10398_txt_earn' );
+
+/* $ sqlite3 reuters.db < part_a1.txt < part_a.txt */

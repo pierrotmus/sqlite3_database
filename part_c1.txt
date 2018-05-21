@@ -1,0 +1,16 @@
+/* Pierrot Musumbu 
+
+  1.	frequency(docid, term, count)
+	(c) union: Write a SQL statement that is equivalent to the following relational algebra expression. 
+	(Hint: you can use the UNION keyword in SQL)
+
+	πterm(σdocid=10398_txt_earn and count=1(frequency)) U πterm(σdocid=925_txt_trade and count=1(frequency))
+*/
+
+SELECT count(*) FROM 
+(SELECT term FROM Frequency w1 WHERE w1.docid='10398_txt_earn' AND w1.count=1 
+UNION 
+SELECT term FROM Frequency w2 WHERE w2.docid='925_txt_trade' AND w2.count=1);
+
+/* $ sqlite3 reuters.db < part_c1.txt < part_c.txt */
+
